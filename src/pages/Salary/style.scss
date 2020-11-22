@@ -1,0 +1,147 @@
+$color-tooltip: #5e6cab;
+$color-checkbox: #f3a348;
+$color-vat: #bfbfbf;
+$color-calculated: #fbf3dc;
+
+.salary {
+  padding-left: 1rem;
+
+  &-form {
+    width: 100%;
+
+    small {
+      padding-left: 1rem;
+    }
+  }
+  .field {
+    font-weight: bold;
+    .custom-control-input:checked ~ .custom-control-label::before {
+      color: #fff;
+      background-color: black;
+      border: 4px solid white;
+    }
+    .custom-radio .custom-control-input:checked ~ .custom-control-label::after {
+      border: 1px solid #ababab;
+      border-radius: 50%;
+      background-image: none;
+      background: initial;
+    }
+
+    &-switch {
+      font-weight: bold;
+      .custom-control-input:checked ~ .custom-control-label::before {
+        background-color: $color-checkbox;
+        border-color: $color-checkbox;
+      }
+    }
+
+    &-input {
+      padding-top: 0.5rem;
+    }
+  }
+  .info-icon {
+    margin-bottom: 5px;
+    margin-left: 1rem;
+    cursor: pointer;
+  }
+}
+
+.field-label {
+  background: green;
+  &::before {
+    background-color: red;
+    color: black;
+    border-color: black;
+    background-color: black;
+  }
+}
+
+.field-label::before {
+  background-color: red;
+  color: black;
+  border-color: black;
+  background-color: black;
+}
+.info-tooltip {
+  .tooltip.show {
+    opacity: 1;
+  }
+  .tooltip {
+    margin-top: 0.7rem;
+    margin-left: 0.5rem;
+  }
+  .tooltip-inner {
+    background-color: $color-tooltip;
+    border-radius: initial;
+  }
+  .arrow::before {
+    border-color: transparent transparent transparent #5e6cab !important;
+    border-style: solid;
+    border-width: 1rem 0 0 1rem !important;
+  }
+}
+
+.vat-payment {
+  margin-top: 0.5rem;
+  margin-left: 2rem;
+  .custom-control-input:checked ~ .custom-control-label::before {
+    border-color: $color-checkbox;
+    background-color: $color-checkbox;
+  }
+  input {
+    border: 1px solid #e0e0e0;
+    border-radius: 1rem;
+    padding: 0 0.7rem;
+    &:focus {
+      outline: none;
+    }
+    &:focus,
+    &:hover {
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+  }
+
+  .vat-field {
+    display: flex;
+    align-items: flex-end;
+    font-size: small;
+    font-weight: bold;
+
+    label {
+      padding-top: 4px;
+    }
+
+    span {
+      padding-right: 1rem;
+      color: $color-vat;
+    }
+
+    &__on {
+      label {
+        color: $color-vat;
+      }
+      span {
+        color: black;
+      }
+    }
+  }
+  .ruble-sign {
+    margin-left: 0.3rem;
+    font-weight: bold;
+  }
+}
+
+.salary-calculated {
+  padding-top: 2rem;
+  background-color: $color-calculated;
+  width: 100%;
+  padding: 3rem;
+
+  .value {
+    font-weight: bold;
+  }
+}
